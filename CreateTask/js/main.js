@@ -1,23 +1,41 @@
 import { DOMs } from "./dom";
 
-const hello = ["rock", "papper", "scissor"];
+const hello = ["rock", "paper", "scissor"];
 
 let wins = 0;
 let ties = 0;
 let lost = 0;
 
+console.log(DOMs.Result);
+
 function rock() {
   DOMs.Rock.addEventListener("click", () => {
     let random = Math.floor(Math.random() * hello.length);
     if (hello[random] == "scissor") {
+      DOMs.Result.insertAdjacentHTML("afterbegin", "<h2>win</h2>");
       wins++;
-      console.log(hello[random] + " wom" + wins);
+      console.log(hello[random], wins);
     } else if (hello[random] == "paper") {
-      console.log(hello[random] + " L");
+      DOMs.Result.insertAdjacentHTML("afterbegin", "<h2>big L</h2>");
+      lost++;
+      console.log(hello[random], lost);
     } else if (hello[random] == "rock") {
-      console.log(hello[random] + " Tie");
+      DOMs.Result.insertAdjacentHTML("afterbegin", "<h2>tie</h2>");
+      ties++;
+      console.log(hello[random], ties);
     }
   });
 }
 
+function flavortext(x) {
+  if (x > 1) {
+    DOMs.Result.insertAdjacentHTML(
+      "afterbegin",
+      "<h2>wow you are kinda bad</h2>"
+    );
+  } else {
+  }
+}
+
+flavortext(wins);
 rock();
