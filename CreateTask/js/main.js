@@ -10,6 +10,7 @@ console.log(DOMs.Result);
 
 function rock() {
   DOMs.Rock.addEventListener("click", () => {
+    DOMs.Result.innerHTML = "";
     let random = Math.floor(Math.random() * hello.length);
     if (hello[random] == "scissor") {
       DOMs.Result.insertAdjacentHTML("afterbegin", "<h2>win</h2>");
@@ -28,12 +29,10 @@ function rock() {
 }
 
 function flavortext(x) {
-  if (x > 1) {
-    DOMs.Result.insertAdjacentHTML(
-      "afterbegin",
-      "<h2>wow you are kinda bad</h2>"
-    );
+  if (x > 0) {
+    console.log("works");
   } else {
+    console.log("error");
   }
 }
 
