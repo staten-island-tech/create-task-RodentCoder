@@ -1,6 +1,7 @@
 import { DOMs } from "./dom";
 
 const hello = ["rock", "paper", "scissor"];
+let history = [];
 
 let wins = 0;
 let ties = 0;
@@ -15,15 +16,18 @@ function rock() {
     if (hello[random] == "scissor") {
       DOMs.Result.insertAdjacentHTML("afterbegin", "<h2>win</h2>");
       wins++;
-      console.log(hello[random], wins);
+      history.push("wins:", wins);
+      console.log(history);
     } else if (hello[random] == "paper") {
       DOMs.Result.insertAdjacentHTML("afterbegin", "<h2>big L</h2>");
       lost++;
-      console.log(hello[random], lost);
+      history.push("lost:", lost);
+      console.log(history);
     } else if (hello[random] == "rock") {
       DOMs.Result.insertAdjacentHTML("afterbegin", "<h2>tie</h2>");
       ties++;
-      console.log(hello[random], ties);
+      history.push("ties:", ties);
+      console.log(history);
     }
   });
 }
@@ -36,5 +40,4 @@ function flavortext(x) {
   }
 }
 
-flavortext(wins);
 rock();
