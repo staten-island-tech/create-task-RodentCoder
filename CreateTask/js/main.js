@@ -16,20 +16,21 @@ function rock() {
     if (hello[random] == "scissor") {
       DOMs.Result.insertAdjacentHTML("afterbegin", "<h2>win</h2>");
       wins++;
-      history.push("wins:", wins);
+      history.push("wins:" + wins);
       console.log(history);
     } else if (hello[random] == "paper") {
       DOMs.Result.insertAdjacentHTML("afterbegin", "<h2>big L</h2>");
       lost++;
-      history.push("lost:", lost);
+      history.push("lost:" + lost);
       console.log(history);
     } else if (hello[random] == "rock") {
       DOMs.Result.insertAdjacentHTML("afterbegin", "<h2>tie</h2>");
       ties++;
-      history.push("ties:", ties);
+      history.push("ties:" + ties);
       console.log(history);
     }
   });
+  DOMs.Area.insertAdjacentHTML("afterbegin", `${wins}`);
 }
 
 function flavortext(x) {
@@ -39,5 +40,5 @@ function flavortext(x) {
     console.log("error");
   }
 }
-
+flavortext(history.wins);
 rock();
