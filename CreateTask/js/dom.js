@@ -4,7 +4,9 @@ const DOMs = {
   Scissor: document.getElementById("Scissor"),
   Reset: document.getElementById("Reset"),
   Result: document.getElementById("Result"),
-  Area: document.getElementById("image-area"),
+  Area: document.getElementById("Score"),
+  History: document.getElementById("flavor"),
+  HistoryLog: document.getElementById("History"),
 };
 
 export { DOMs };
